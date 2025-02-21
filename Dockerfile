@@ -5,9 +5,9 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-# Copy only necessary files
-COPY src/ ./src/
+# Copy only the necessary files
 COPY server.js ./
+COPY .env ./
 
 EXPOSE 3001
 CMD ["node", "server.js"]
